@@ -40,6 +40,36 @@ common tools, like base request, base tableview etc.
     ss.frameworks = 'BaseRequest'
   end
 
+  s.subspec 'Utility' do |ss|
+    ss.source_files = 'CommonTools/Utility/*'
+    ss.public_header_files = 'CommonTools/Utility/CTUtility.h'
+    ss.frameworks = 'Utility'
+  end
+
+  s.subspec 'YAUIKit' do |ss|
+    ss.source_files = 'CommonTools/YAUIKit/*'
+    ss.public_header_files = 'CommonTools/YAUIKit/YAPanBackController.h'
+    ss.frameworks = 'YAUIKit'
+  end
+
+  s.subspec 'Categories' do |ss|
+    ss.source_files = 'CommonTools/Categories/*'
+    ss.public_header_files = 'CommonTools/Categories/UIView+shortCut.h'
+    ss.frameworks = 'Categories'
+  end
+
+  s.subspec 'BaseTableView' do |ss|
+    ss.source_files = 'CommonTools/BaseTableView/*'
+    ss.public_header_files = 'CommonTools/BaseTableView/CTBaseTableView.h'
+    ss.frameworks = 'BaseTableView'
+  end
+
+  s.subspec 'BaseViewController' do |ss|
+    ss.source_files = 'CommonTools/BaseViewController/*'
+    ss.public_header_files = 'CommonTools/BaseViewController/CTBaseViewController.h'
+    ss.frameworks = 'BaseViewController'
+  end
+
   # s.resource_bundles = {
   #   'CommonTools' => ['CommonTools/Assets/*.png']
   # }

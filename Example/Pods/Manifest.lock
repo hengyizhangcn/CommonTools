@@ -1,5 +1,30 @@
 PODS:
-  - CommonTools (0.1.0)
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CommonTools (0.1.0):
+    - AFNetworking (~> 2.5.3)
+    - CommonTools/BaseRequest (= 0.1.0)
+  - CommonTools/BaseRequest (0.1.0):
+    - AFNetworking (~> 2.5.3)
   - Kiwi (2.4.0)
 
 DEPENDENCIES:
@@ -11,7 +36,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CommonTools: 3d860d890757c01a9bd4fd67bb7a99d5486311a6
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  CommonTools: 75f98b10b3e842a3b0d463140d0ba91d0b88ef82
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
 
 COCOAPODS: 0.39.0

@@ -41,6 +41,14 @@
 
 - (NSOperation *)httpRequest:(NSString *)type url:(NSString *)URLString parameters:(NSDictionary *)parameters files:(NSArray *)files filesData:(NSData *)filesData fileUploadKey:(NSString *)fileUploadKey savedFilePath:(NSString *)savedFilePath requestType:(CTNetworkEngineType)requestType success:(successBlock)successBlock fail:(failBlock)failBlock uploadProgress:(CTUploadProgress)uploadProgress downloadProgress:(CTDownloadProgress)downloadProgress
 {
+    if (self.baseUrl) {
+        URLString = [NSString stringWithFormat:@"%@%@", self.baseUrl, URLString];
+    }
+    
+    if (self.limitedUrl && ![URLString hasPrefix:self.limitedUrl]) {
+        return nil;
+    }
+    
     self.operationManager.requestSerializer.timeoutInterval = self.timeoutInterval ?: 10; //默认10秒
     switch (requestType) {
         case CTNetworkEngineTypeCommon:

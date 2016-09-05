@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-CommonTools_Tests/AFNetworking.framework"
   install_framework "Pods-CommonTools_Tests/CommonTools.framework"
   install_framework "Pods-CommonTools_Tests/Kiwi.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-CommonTools_Tests/AFNetworking.framework"
   install_framework "Pods-CommonTools_Tests/CommonTools.framework"
   install_framework "Pods-CommonTools_Tests/Kiwi.framework"
 fi

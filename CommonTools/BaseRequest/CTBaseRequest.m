@@ -9,6 +9,7 @@
 #import "CTBaseRequest.h"
 #import "AFNetworking.h"
 #import "CTNetworkEngine.h"
+#import "CTUtility.h"
 @interface CTBaseRequest ()
 
 /**
@@ -46,8 +47,7 @@
         if ([[tmpDic objectForKey:@"OK"] boolValue]) {
             if (self.successBlock) {
                 if (self.requestModel) {
-//                    Class class = NSClassFromString(self.requestModel);
-                    id obj = tmpDic;// [[class alloc] initWithDictionary:tmpDic error:nil];
+                    id obj = [CTUtility convertDictionaryToModel:tmpDic className:self.requestModel];
                     if (obj) {
                         self.successBlock(obj);
                         return;
@@ -56,22 +56,15 @@
                 self.successBlock(tmpDic);
             }
         } else {
-            if ([tmpDic objectForKey:@"errorCode"]) {
-                if (self.failBlock) {
-                    self.failBlock([tmpDic objectForKey:@"errorCode"]);
-                }
-            } else if ([tmpDic objectForKey:@"resultCode"]) {
-                if (self.failBlock) {
-                    self.failBlock([tmpDic objectForKey:@"resultCode"]);
-                }
-            } else {
-                if (self.failBlock) {
-                    self.failBlock(0);
-                }
+            if (self.failBlock) {
+                self.failBlock(0);
             }
         }
     } fail:^(NSError *error) {
-        if (self.failBlock) {
+        if ([CTNetworkEngine instance].unionfailBlock) {
+            [CTNetworkEngine instance].unionfailBlock(@(error.code));
+        }
+        else if (self.failBlock) {
             self.failBlock(@(error.code));
         }
     } uploadProgress:^(long long totalBytesWritten, long long totalBytesExpectedToWrite) {

@@ -36,7 +36,7 @@
  */
 @property (nonatomic, strong) NSString *fileUploadKey;
 /**
- *  下载文件需要的缓存路径，如果不设置，默认为Documents/avCaches文件夹下
+ *  下载文件需要的缓存路径，如果不设置，默认为Documents/CTCaches文件夹下
  */
 @property (nonatomic, strong) NSString *savedFilePath;
 /**
@@ -52,6 +52,7 @@
  *  请求失败回调
  */
 @property (nonatomic, copy) failBlock failBlock;
+
 /**
  *  上传进度回调
  */

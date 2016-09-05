@@ -23,6 +23,21 @@ typedef NS_ENUM(NSInteger, CTNetworkEngineType){
  *  超时时间
  */
 @property (nonatomic, assign) NSInteger timeoutInterval;
+
+/**
+ *  基础地址，如http://www.baidu.com，用于拼接url，如果为空则不拼接
+ */
+@property (nonatomic, strong) NSString *baseUrl;
+
+/**
+ *  限制请求地址，如http://www.baidu.com，用于屏蔽其它的请求，如果为空则不屏蔽
+ */
+@property (nonatomic, strong) NSString *limitedUrl;
+
+/**
+ *  错误处理统一回调
+ */
+@property (nonatomic, copy) failBlock unionfailBlock;
 /**
  *  获取实例
  *

@@ -1,9 +1,9 @@
 {
   "name": "CommonTools",
   "version": "0.1.0",
-  "summary": "A short description of CommonTools.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/CommonTools",
+  "summary": "common tools, like base request, base tableview etc.",
+  "description": "TODO: Add long description of the pod here.\ncommon tools, like base request, base tableview etc.",
+  "homepage": "https://github.com/hengyizhangcn/CommonTools",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,25 @@
     "hengyizhangcn@gmail.com": "hengyizhangcn@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/CommonTools.git",
+    "git": "https://github.com/hengyizhangcn/CommonTools.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CommonTools/Classes/**/*"
+  "requires_arc": true,
+  "source_files": "CommonTools/CommonTools.h",
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.5.3"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "BaseRequest",
+      "source_files": "CommonTools/BaseRequest/*",
+      "public_header_files": "CommonTools/BaseRequest/CTBaseRequest.h",
+      "frameworks": "BaseRequest"
+    }
+  ]
 }
