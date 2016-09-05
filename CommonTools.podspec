@@ -30,9 +30,16 @@ common tools, like base request, base tableview etc.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.requires_arc = true
 
-  s.source_files = 'CommonTools/Classes/**/*'
+  s.source_files = 'CommonTools/CommonTools.h'
   
+  s.subspec 'BaseRequest' do |ss|
+    ss.source_files = 'CommonTools/BaseRequest/*'
+    ss.public_header_files = 'CommonTools/BaseRequest/CTBaseRequest.h'
+    ss.frameworks = 'BaseRequest'
+  end
+
   # s.resource_bundles = {
   #   'CommonTools' => ['CommonTools/Assets/*.png']
   # }

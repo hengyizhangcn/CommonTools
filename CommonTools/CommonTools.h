@@ -9,5 +9,7 @@
 #ifndef CommonTools_h
 #define CommonTools_h
 
+#import "CTBaseRequest.h"
+#import "CTNetworkEngine.h"
 
 #endif /* CommonTools_h */
