@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CTTableViewCell : UITableViewCell
-
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 
 - (void)willDisplayCell;
 - (void)endDisplayCell;
