@@ -1,0 +1,17 @@
+PODS:
+  - CommonTools (0.1.0)
+  - Kiwi (2.4.0)
+
+DEPENDENCIES:
+  - CommonTools (from `../`)
+  - Kiwi
+
+EXTERNAL SOURCES:
+  CommonTools:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CommonTools: 3d860d890757c01a9bd4fd67bb7a99d5486311a6
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+
+COCOAPODS: 0.39.0

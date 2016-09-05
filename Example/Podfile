@@ -1,0 +1,6 @@
+use_frameworks!
+target 'CommonTools_Tests' do
+  pod 'CommonTools', :path => '../'
+  
+  pod 'Kiwi'
+end
